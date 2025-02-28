@@ -1,3 +1,5 @@
+"use client"
+
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import images from '@/public/images';
@@ -27,7 +29,7 @@ const HeroBanner = () => {
             image: images.hero_image3
         },
         {
-            title: "Corperate Events",
+            title: "Corporate Events",
             description: <p className='text-white'>From Boardrooms <br /> <span className='text-primary font-semibold'>to Ballrooms</span></p>,
             buttonText: "Explore",
             image: images.hero_image4
@@ -100,7 +102,7 @@ const HeroBanner = () => {
                     </div>
                     
                     {/* Images */}
-                    <div className="w-full h-[300px] relative mt-4">
+                    <div className="w-full h-[300px] relative mt-4 flex justify-center">
                         {content.map((item, index) => (
                             <motion.div
                                 key={index}
@@ -110,7 +112,7 @@ const HeroBanner = () => {
                                     scale: activeIndex === index ? 1 : 0.8
                                 }}
                                 transition={{ duration: 0.5 }}
-                                className="absolute left-1/4 -translate-x-1/2 rounded-lg overflow-hidden"
+                                className="absolute rounded-lg overflow-hidden"
                             >
                                 <Image
                                     src={item.image}
@@ -128,7 +130,7 @@ const HeroBanner = () => {
     // Desktop Version
     const DesktopVersion = () => (
         <div className="hidden md:block relative w-full h-[550px] overflow-hidden rounded-t-[20px] rounded-b-[20px]">
-            <div
+            <div 
                 className={`absolute inset-0 !rounded-3xl ${sectionPseudoStyle}`}
                 style={{
                     backgroundImage: `url('/images/hero_img.png')`,
@@ -144,7 +146,7 @@ const HeroBanner = () => {
                         background: 'linear-gradient(to right, rgba(7, 5, 1, 0.9), rgba(22, 20, 14, 0.85), rgba(49, 47, 43, 0.75))'
                     }}
                 />
-                <div className="relative z-20 max-w-6xl mx-auto h-full flex items-center">
+                <div className="relative z-20 max-w-6xl mx-auto h-full flex items-center pb-8">
                     <div className="w-1/2 p-8">
                         {content.map((item, index) => (
                             <motion.div

@@ -5,7 +5,7 @@ import { sectionPadding } from "../styles/styles"
 
 export default function FeatureSection() {
     return (
-        <section className={`${sectionPadding} mb-20`}>
+        <section className={`${sectionPadding} mb-5 md:mb-20`}>
             <div className="container mx-auto px-4 py-12 md:py-16">
                 <div className="text-center mb-8">
                     <h2 className="text-2xl md:text-3xl font-semibold">
@@ -23,7 +23,7 @@ export default function FeatureSection() {
                                 <br />
                                 Website for Your Event!
                             </h3>
-                            <p className="text-gray-600 leading-relaxed">
+                            <p className="text-[#666666] leading-relaxed">
                                 Create customized event websites with ease! Select from beautifully designed templates and input details
                                 like event name, date, time, venue, and more. Add personal touches like photos, videos, and messages to
                                 share your unique celebration with guests.

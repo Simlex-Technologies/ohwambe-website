@@ -6,6 +6,7 @@ export class ApplicationRoutes {
    * The route to the home page
    */
   static readonly Home = '/';
+  static readonly Pricing = '/pricing';
 
   /**
    * The route to the about page
@@ -55,46 +56,7 @@ export class ApplicationRoutes {
   /**
    * The route to the payment success page
    */
-  static readonly PaymentSuccess = '/confirmation';
+  static readonly Features = '/features';
 
-  /**
-   * The route to the buffet payment page
-   */
-  static readonly BuffetPayment: (id: string) => string = (id: string) =>
-    `/buffet/payment?id=${id}`;
 
-    /**
-     * The route to the order page
-     */
-    static readonly Order = '/order';
-
-    /**
-     * The route to the view order details page
-     */
-    static readonly OrderDetails: (id: string) => string = (id: string) => `/order/${id}`;
-
-    /**
-     * The route to the cart page
-     */
-    static readonly Cart = '/order/cart';
-
-    /**
-     * The route to the checkout page
-     */
-    static readonly Checkout = '/order/checkout';
-
-    /**
-     * The route to the payment page
-     */
-    static readonly OrderPayment = '/order/payment';
-
-    /**
-     * The route to the manage order page
-     */
-    static readonly ManageOrder = '/order/manage';
-
-    /**
-     * The route to the account page
-     */
-    static readonly Account = '/account';
 }

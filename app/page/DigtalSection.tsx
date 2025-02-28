@@ -12,12 +12,12 @@ const DigtalSection = (props: Props) => {
                 <div className="space-y-6">
                     <div>
                         <h3 className="text-xl md:text-2xl font-semibold mb-4">
-                            <span className="">3.</span> Verify Invitations at the Venue
+                            <span className="">3.</span> Digitalize your
                             <br />
-                            with QR Code Guest Verification
+                            Event Invitations and RSVPs
                         </h3> 
-                        <p className="text-gray-600 leading-relaxed">
-                        Ensure a smooth check-in experience at your event. Guests receive a unique QR code with their invitation, which can be scanned at the venue to manage crowd at your wedding.
+                        <p className="text-[#666666] leading-relaxed">
+                        Simplify the invitation process with digital invites that can be shared via email, social media, or messaging apps. Guests can RSVP instantly, and.... you can track responses in real time.
                         </p>
                     </div>
                     <div>
@@ -29,7 +29,7 @@ const DigtalSection = (props: Props) => {
 
                 <div className="relative h-[400px] md:w-[438px] md:h-[355px]">
                     <Image
-                        src={images.feature1}
+                        src={images.group_img}
                         alt="Wedding website template preview"
                         fill
                         className="object-contain"

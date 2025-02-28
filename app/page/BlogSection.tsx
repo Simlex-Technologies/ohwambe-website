@@ -42,7 +42,7 @@ export default function BlogSection() {
                 />
               </div>
               <h3 className="text-sm font-medium leading-tight text-gray-900">{post.title}</h3>
-              <span className="text-xs text-gray-600">{post.date}</span>
+              <span className="text-xs text-[#666666]">{post.date}</span>
             </Link>
           ))}
         </div>

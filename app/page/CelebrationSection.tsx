@@ -1,16 +1,37 @@
 import images from "@/public/images"
 import Image from "next/image"
 import { sectionPadding } from "../styles/styles"
+import { motion } from "framer-motion"
+
+const textVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8 } }
+}
+
+const imageVariants = {
+  hidden: { opacity: 0, rotate: -10 },
+  visible: { opacity: 1, rotate: 0, transition: { duration: 0.8 } }
+}
 
 export default function CelebrationSection() {
   return (
     <section className={`${sectionPadding} mb-20`}>
       <div className="max-w-6xl mx-auto px-4 py-12 md:py-16 lg:py-20">
-        <h2 className="text-3xl md:text-4xl font-medium tracking-tight text-center mb-16">
+        <motion.h2
+          initial="hidden"
+          animate="visible"
+          variants={textVariants}
+          className="text-3xl md:text-4xl font-medium tracking-tight text-center mb-16"
+        >
           Celebrate <span className="text-secondary">Life's Moments </span> <br /> in Style
-        </h2>
+        </motion.h2>
         <div className="grid md:grid-cols-2 gap-12 items-start">
-          <div className="relative md:w-[450px] h-[300px]">
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={imageVariants}
+            className="relative md:w-[450px] h-[300px]"
+          >
             <div className="absolute inset-0 bg-white rounded-lg shadow-lg transform -rotate-6">
               <div className="absolute inset-0 p-3">
                 <Image
@@ -22,8 +43,13 @@ export default function CelebrationSection() {
                 />
               </div>
             </div>
-          </div>
-          <div className="space-y-4">
+          </motion.div>
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={textVariants}
+            className="space-y-4"
+          >
             <span className="text-gray block leading-relaxed">
               Every celebration deserves to be remembered and filled with style that makes your story uniquely yours. From
               intimate gatherings to grand celebrations, we're here to make every moment special. Let us help you create
@@ -34,7 +60,7 @@ export default function CelebrationSection() {
               premium products and services, we ensure your celebration reflects your personal style while creating
               lasting memories.
             </p>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

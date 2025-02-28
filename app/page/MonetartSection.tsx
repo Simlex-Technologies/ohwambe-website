@@ -16,7 +16,7 @@ const MonetarySection = (props: Props) => {
                             <br />
                             Supports For Your Event
                         </h3>
-                        <p className="text-gray-600 leading-relaxed">
+                        <p className="text-[#666666] leading-relaxed">
                             Allow guests to support your celebration with monetary gifts. Ohwambe offers a secure payment feature, enabling loved ones to contribute directly through your event website.
                         </p>
                     </div>

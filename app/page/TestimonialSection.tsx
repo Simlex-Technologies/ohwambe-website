@@ -15,29 +15,29 @@ const TestimonialSection = (props: Props) => {
              image: images.testimonial,
             name: 'Janet Akinloye',
             text: "Ohwambe made planning my wedding so easy and fun! The personalized website and digital invitations were a huge hit with our guests, and the QR code check-in saved us from wide uninvited guests. I can’t imagine planning another event without it!",
-            reviewLink: 'https://example.com/review', // add this property
-            ratingNumber: 5, // add this property
+            reviewLink: 'https://example.com/review',
+            ratingNumber: 5,
         },
         {
             image: images.testimonial,
             name: 'David Chuks',
             text: "I used Ohwambe to plan my 40th birthday party, and it was amazing! The interactive map feature ensured all my guests found the venue easily, and the secure payment option allowed them to send monetary gifts seamlessly. What a fantastic platform!",
-            reviewLink: 'https://example.com/review', // add this property
-            ratingNumber: 5, // add this property
+            reviewLink: 'https://example.com/review',
+            ratingNumber: 5,
         },
         {
             image: images.testimonial2,
             name: 'Jennifer Sina',
             text: "I loved how Owambe made it simple to design and share beautiful invitation cards. The analytics feature also helped me track RSVPs and ensure everyone was accounted for. Such a lifesaver for busy hosts!",
-            reviewLink: 'https://example.com/review', // add this property
-            ratingNumber: 5, // add this property
+            reviewLink: 'https://example.com/review',
+            ratingNumber: 5,
         },
         {
             image: images.testimonial3,
             name: 'Yasmine Yvonne',
             text: "The salad is fresh!!! Don't ask about the sauce again, it's really delicious, it's going to be routine. I recommend this salad to all of you guys! because they really take care of the quality.",
-            reviewLink: 'https://example.com/review', // add this property
-            ratingNumber: 5, // add this property
+            reviewLink: 'https://example.com/review',
+            ratingNumber: 5,
         }
     ];
 

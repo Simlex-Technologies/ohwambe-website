@@ -16,7 +16,7 @@ const NavigateSection = (props: Props) => {
                             <br />
                             Navigate your Guest to the Venue
                         </h3>
-                        <p className="text-gray-600 leading-relaxed">
+                        <p className="text-[#666666] leading-relaxed">
                         With interactive maps integrated into the platform, your guests can easily navigate to your event venue without the hassle of making phone calls for directions. These maps provide accurate details, including the venue location, nearby landmarks, parking areas, and even accommodations.
                         </p>
                     </div>
