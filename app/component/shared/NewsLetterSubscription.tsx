@@ -60,7 +60,7 @@ const NewsLetterSubscription = (props: Props) => {
     }, [isSubscribing]);
     return (
         <div className='mt-8 mb-8'>
-            <p className='mb-2 font-semibold'>Subscribe to our Newsletter</p>
+            <p className='mb-3 font-semibold'>Subscribe to our Newsletter</p>
             <div className='bg-white flex items-center rounded-3xl justify-between mb-3 max-w-[400px]'>
                 <input
                     type='email'
@@ -109,7 +109,7 @@ const NewsLetterSubscription = (props: Props) => {
 
             </div>
             {emailErrorMsg && (
-                <span className='text-sm text-mcNif-red-2'>{emailErrorMsg.value}</span>
+                <span className='text-sm text-red-500'>{emailErrorMsg.value}</span>
             )}
         </div>
     )
