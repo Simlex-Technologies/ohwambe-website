@@ -1,11 +1,17 @@
 import logo from '@/public/images/logo.png';
-import hero_image1 from '@/public/images/hero_image1.png';
+import hero_image1 from '@/public/images/hero_img.png';
+import hero_image01 from '@/public/images/hero_group.jpg';
+import hero_image02 from '@/public/images/hero_image02.jpg';
+import hero_image03 from '@/public/images/hero_image03.jpg';
+import hero_image04 from '@/public/images/hero_image04.jpg';
+import group_img from '@/public/images/group_Img.png';
+import anni from '@/public/images/anni.jpg';
+import house from '@/public/images/house.jpg';
 import hero_image2 from '@/public/images/hero_image2.png';
 import hero_image3 from '@/public/images/hero_image3.png';
 import hero_image4 from '@/public/images/hero_image4.png';
 import hero_image5 from '@/public/images/hero_image5.png';
 import hero_image6 from '@/public/images/hero_image6.png';
-import mobileLogo from '@/public/images/mobile_logo.png';
 import home_hero_image from '@/public/images/hero_img.png';
 import celebration from '@/public/images/home1.png';
 import wait_list from '@/public/images/wait_list.png';
@@ -26,6 +32,12 @@ import testimonial3 from '@/public/images/Container2.png';
 export default {
   logo,
   home_hero_image,
+  anni,
+  house,
+  hero_image01,
+  hero_image02,
+  hero_image03,
+  hero_image04,
   hero_image1,
   hero_image2,
   hero_image3,
@@ -46,4 +58,5 @@ export default {
   blog1,
   blog2,
   blog3,
+  group_img
 };
