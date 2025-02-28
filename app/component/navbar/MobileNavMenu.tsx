@@ -26,7 +26,7 @@ const MobileNavMenu: FunctionComponent<MobileNavMenuProps> = ({ setMobileNavIsVi
             text: 'Pricing',
             link: ApplicationRoutes.Pricing
         }
-        
+
     ]
 
     return (
@@ -53,7 +53,7 @@ const MobileNavMenu: FunctionComponent<MobileNavMenuProps> = ({ setMobileNavIsVi
             <motion.div variants={ulVariant} className="flex flex-col items-center p-20 gap-7">
                 {
                     navLinks.map((navLink, index) => (
-                        <Link key={index} className="text-white"  href={navLink.link} onClick={() => setMobileNavIsVisible(false)}
+                        <Link key={index} className="text-white" href={navLink.link} onClick={() => setMobileNavIsVisible(false)}
                         >
                             <motion.span variants={liVariant} className={navLinkStyle(pathname == navLink.link)} key={index}>
                                 {navLink.text}
@@ -63,10 +63,10 @@ const MobileNavMenu: FunctionComponent<MobileNavMenuProps> = ({ setMobileNavIsVi
                 }
                 <div className="flex flex-col items-end gap-7">
                     <Link href='/signup' onClick={() => setMobileNavIsVisible(false)}>
-                        <button className='bg-secondary text-white hover:bg-secondary text-white/80 px-10 rounded-full py-2' children="Sign up"/>
+                        <button className='bg-secondary text-white hover:bg-secondary text-white/80 px-10 rounded-full py-2' title="Sign up" children="Sign up" />
                     </Link>
                     <Link href='/login' onClick={() => setMobileNavIsVisible(false)}>
-                        <button children=" Login" className='text-white border border-white rounded-full py-2 px-10' />
+                        <button title="Login" children=" Login" className='text-white border border-white rounded-full py-2 px-10' />
                     </Link>
                 </div>
             </motion.div>
