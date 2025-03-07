@@ -21,12 +21,12 @@ import support from '@/public/images/support.png';
 import support1 from '@/public/images/pay-goods-by-credit-card-through-smartphone-coffee-shop.png';
 import support2 from '@/public/images/online-shopping-concept-women-shopping-online-is-form-electronic-commerce-from-seller-internet.png';
 import smartphone from '@/public/images/3d-smartphone-device-with-map-gps-technology.png';
-import testimonial from '@/public/images/Container.png';
-import testimonial2 from '@/public/images/Container1.png';
+import testimonial from '@/public/images/container.png';
+import testimonial2 from '@/public/images/container1.png';
 import blog1 from '@/public/images/blog1.png';
 import blog2 from '@/public/images/blog2.png';
 import blog3 from '@/public/images/blog3.png';
-import testimonial3 from '@/public/images/Container2.png';
+import testimonial3 from '@/public/images/container2.png';
 
 
 export default {
