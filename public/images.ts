@@ -1,5 +1,5 @@
 import logo from '@/public/images/logo.png';
-import hero_image1 from '@/public/images/hero_img.png';
+import hero_image1 from '@/public/images/hero_img001.png';
 import hero_image01 from '@/public/images/hero_group.jpg';
 import hero_image02 from '@/public/images/hero_image02.jpg';
 import hero_image03 from '@/public/images/hero_image03.jpg';
