@@ -102,16 +102,6 @@ const Layout = ({ children }: Props) => {
         "/order/payment",
     ];
 
-    // useEffect(() => {
-    //     if (!session && status == "unauthenticated") {
-    //         // Check if they are in any authorized page
-    //         if (authorizedPages.includes(pathname)) {
-    //             // Redirect to homepage
-    //             window.location.href = "/";
-    //         }
-    //     }
-    // }, [session, status]);
-
     return (
         <>
             {!loaderIsVisible && (
@@ -125,15 +115,6 @@ const Layout = ({ children }: Props) => {
                             unstyled: false,
                         }}
                     />
-
-                    {/* <LoginModal
-                        visibility={isLoginPromptVisible}
-                        setVisibility={setIsLoginPromptVisible}
-                    />
-                    <SignUpModal
-                        visibility={isSignUpModalVisible}
-                        setVisibility={setIsSignUpModalVisible}
-                    /> */}
 
                     <Navbar />
                     <Suspense fallback={<PageLoader />}>
