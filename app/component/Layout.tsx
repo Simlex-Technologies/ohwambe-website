@@ -9,18 +9,17 @@ import { usePathname } from 'next/navigation';
 import Navbar from './shared/Navbar';
 import Footer from './shared/Footer';
 import CustomImage from './ui/image';
-import LoginModal from './modal/LoginModal';
-import SignUpModal from './modal/SignUpModal';
+// import LoginModal from './modal/LoginModal';
 // import { useUserContext } from '../context/UserContext';
 import { useSession } from 'next-auth/react';
 
 type Props = {
     children: React.ReactNode;
-    isSignUpModalVisible: boolean;
-    setIsSignUpModalVisible: (value: boolean) => void;
+    // isSignUpModalVisible: boolean;
+    // setIsSignUpModalVisible: (value: boolean) => void;
 }
 
-const Layout = ({ children, isSignUpModalVisible, setIsSignUpModalVisible }: Props) => {
+const Layout = ({ children }: Props) => {
 
     // const { isLoginPromptVisible, isSignUpModalVisible, setIsLoginPromptVisible, setIsSignUpModalVisible } = useUserContext();
     // const { data: session, status } = useSession();
