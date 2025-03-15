@@ -28,6 +28,9 @@ import blog2 from '@/public/images/blog2.png';
 import blog3 from '@/public/images/blog3.png';
 import testimonial3 from '@/public/images/Container2.png';
 
+// contact page images
+import contact_image from '@/public/images/contact_hero.png';
+
 
 export default {
   logo,
@@ -58,5 +61,6 @@ export default {
   blog1,
   blog2,
   blog3,
-  group_img
+  group_img,
+  contact_image
 };
