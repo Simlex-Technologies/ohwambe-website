@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Albert_Sans } from "next/font/google";
+import { Josefin_Sans } from "next/font/google";
 import "./globals.scss";
 import NextTopLoader from "nextjs-toploader";
 // import { ToastProvider } from "./components/context/ToastCardContext";
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 };
 
 
-const albertFont = Albert_Sans({ subsets: ["latin"] });
+const albertFont = Josefin_Sans({ subsets: ["latin"] });
 
 export default function RootLayout({
   children,
