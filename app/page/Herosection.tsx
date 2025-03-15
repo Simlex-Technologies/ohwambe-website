@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import images from "@/public/images";
 import Image from "next/image";
 import { sectionPseudoStyle } from "../styles/styles";
+import Link from "next/link";
 
 const HeroBanner = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -191,9 +192,9 @@ const HeroBanner = () => {
                   {item.title}
                 </h1>
                 <h2 className="text-gray-300 mb-6 text-5xl">{item.description}</h2>
-                <button className="px-6 py-2 bg-primary text-gray-900 rounded-full font-medium hover:bg-primary/50 transition-colors">
+                <Link href="/contact" className="px-6 py-2 bg-primary text-gray-900 rounded-full font-medium hover:bg-primary/50 transition-colors">
                   {item.buttonText}
-                </button>
+                </Link>
               </motion.div>
             ))}
           </div>
