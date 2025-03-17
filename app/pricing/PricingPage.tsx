@@ -72,8 +72,8 @@ export default function PricingCards() {
 
                                         <button
                                             className={`w-1/2 py-2 px-4 rounded-full text-sm font-medium ${plan.featured
-                                                    ? 'bg-white text-[#B08D57]'
-                                                    : 'bg-[#B08D57] text-[#fff] border border-[#B08D57] hover:bg-[#B08D57]/20'
+                                                    ? 'bg-white text-[#B08D57] hover:scale-95'
+                                                    : 'bg-[#B08D57] text-[#fff] border border-[#B08D57] hover:scale-95'
                                                 }`}
                                         >
                                             Get the plan
