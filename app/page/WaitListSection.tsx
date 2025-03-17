@@ -96,9 +96,9 @@ const WaitListSection = () => {
               variants={buttonVariants}
               className="flex justify-center items-center mb-8"
             >
-              <button className="py-2 px-4 rounded-full text-sm font-semibold shadow-lg text-black bg-white hover:bg-white/90">
+              <div className="py-2 px-4 rounded-full text-sm font-semibold shadow-lg text-black bg-white hover:bg-white/90">
                 Join Our Waitlist
-              </button>
+              </div>
             </motion.div>
 
             {/* Main Content */}
