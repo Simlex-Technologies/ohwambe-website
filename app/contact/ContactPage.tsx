@@ -4,6 +4,7 @@ import { sectionPadding } from "../styles/styles";
 import HeroBanner from "../reusables/HeroBanner";
 import { FormEvent, useState } from "react";
 import Link from "next/link";
+import { toast } from "react-toastify";
 
 
 export default function ContactPage() {
@@ -16,11 +17,56 @@ export default function ContactPage() {
     message: "",
   })
 
-  const handleSubmit = (e: FormEvent) => {
-    e.preventDefault()
-    // Handle form submission
-    console.log(formData)
-  }
+  const [isLoading, setIsLoading] = useState(false);
+  const [email, setEmail] = useState('');
+  const [error, setError] = useState('');
+  const [success, setSuccess] = useState(false);
+
+  // const handleSubmit = (e: FormEvent) => {
+  //   e.preventDefault()
+  //   // Handle form submission
+  //   console.log(formData)
+  // }
+
+   const handleSubmit = async (e: React.FormEvent) => {
+      e.preventDefault();
+      setError('');
+    
+      if (!email) {
+        setError('Email is required');
+        return;
+      } else if (!/\S+@\S+\.\S+/.test(email)) {
+        setError('Please enter a valid email address');
+        return;
+      }
+    
+      setIsLoading(true);
+    
+      fetch('/api/waitlist', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      })
+        .then(async response => {
+          const result = await response.json();
+          if (result.success) {
+            toast.success('Successfully added to the waitlist!');
+            setEmail('');
+          } else {
+            setError('Failed to join waitlist. Try again later.');
+            toast.error('Failed to join waitlist. Try again later.');
+          }
+        })
+        .catch(() => {
+          setError('Error submitting form. Please try again.');
+          toast.error('Error submitting form. Please try again.');
+        })
+        .finally(() => {
+          setIsLoading(false);
+        });
+    };
   return (
     <main className="min-h-screen">
       {/* Hero Banner */}
@@ -145,6 +191,7 @@ export default function ContactPage() {
             </div>
 
             <button
+            onClick={handleSubmit}
               type="submit"
               className="bg-[#B88746] text-white px-6 py-2 rounded-xl text-sm hover:bg-[#a77a3d] transition-colors"
             >
