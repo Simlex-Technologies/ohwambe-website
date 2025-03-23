@@ -91,72 +91,101 @@ const HeroBanner = () => {
   /**
    * Mobile version of the hero banner
    */
-  const MobileVersion = () => (
-    <div className="block md:hidden relative w-full h-screen overflow-hidden rounded-[20px]">
-      <div
-        className={`absolute inset-0 ${sectionPseudoStyle}`}
-        style={{
-          backgroundImage: `url('/images/hero_img.png')`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          borderRadius: "32px",
-        }}
-      >
-        {/* Dark overlay for better text contrast */}
-        <div className="absolute inset-0 z-10 bg-gradient-to-b from-[#070501E6] to-[#16140EE6]" />
+const MobileVersion = () => (
+  <div className="block md:hidden relative w-full h-[600px] overflow-hidden rounded-[20px]">
+    <div
+      className={`absolute inset-0 ${sectionPseudoStyle}`}
+      style={{
+        backgroundImage: `url('/images/hero_img.png')`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        borderRadius: "32px",
+      }}
+    >
+      {/* Dark overlay for better text contrast */}
+      <div className="absolute inset-0 z-10 bg-gradient-to-b from-[#070501] to-[#1a1812] opacity-95" />
 
-        <div className="relative z-20 flex flex-col items-center px-4 pt-28">
-          {/* Rotating Content */}
-          <div className="w-full text-center">
-            {content.map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{
-                  opacity: activeIndex === index ? 1 : 0,
-                  y: activeIndex === index ? 0 : 20,
-                }}
-                transition={{ duration: 0.5 }}
-                className={`absolute w-full ${activeIndex === index ? "relative" : "hidden"}`}
-              >
-                <h1 className="text-sm font-bold mb-4 bg-[#4F4127] text-[#FFD07B] py-1 px-4 rounded-full w-fit mx-auto">
-                  {item.title}
-                </h1>
-                <div className="text-2xl mb-6">{item.description}</div>
-                <button className="px-6 py-2 bg-primary text-gray-900 rounded-full font-medium hover:bg-primary/50 transition-colors mb-8">
-                  {item.buttonText}
-                </button>
-              </motion.div>
-            ))}
-          </div>
+      <div className="relative z-20 flex flex-col items-center px-4 pt-28">
+        {/* Rotating Content */}
+        <div className="w-full text-center">
+          {content.map((item, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{
+                opacity: activeIndex === index ? 1 : 0,
+                y: activeIndex === index ? 0 : 20,
+              }}
+              transition={{ duration: 0.5 }}
+              className={`absolute w-full ${activeIndex === index ? "relative" : "hidden"}`}
+            >
+              <h1 className="text-sm font-bold mb-4 bg-[#4F4127] text-[#FFD07B] py-1 px-4 rounded-full w-fit mx-auto">
+                {item.title}
+              </h1>
+              <div className="text-2xl mb-6">{item.description}</div>
+              <button className="px-6 py-2 bg-primary text-gray-900 rounded-full font-medium hover:bg-primary/50 transition-colors mb-8">
+                {item.buttonText}
+              </button>
+            </motion.div>
+          ))}
+        </div>
 
-          {/* Image Slider */}
-          <div className="w-full h-[300px] relative mt-4 flex justify-center">
-            {content.map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{
-                  opacity: activeIndex === index ? 1 : 0,
-                  scale: activeIndex === index ? 1 : 0.8,
+        {/* Vertical Animation Container */}
+        <div className="w-full h-[240px] relative mt-4 overflow-hidden rounded-lg">
+          {content.map((item, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0 }}
+              animate={{
+                opacity: activeIndex === index ? 1 : 0,
+              }}
+              transition={{ duration: 0.5 }}
+              className={`absolute w-full h-full ${
+                activeIndex === index ? "block" : "hidden"
+              }`}
+            >
+              {/* Vertical scrolling container */}
+              <motion.div 
+                className="absolute w-full"
+                initial={{ y: 0 }}
+                animate={{ x: "-100%" }}
+                transition={{
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                  duration: 15,
+                  ease: "easeInOut"
                 }}
-                transition={{ duration: 0.5 }}
-                className="absolute w-full h-[240px] overflow-hidden rounded-lg"
               >
-                <Image
-                  src={item.image}
-                  alt={`Slide ${index + 1}`}
-                  layout="fill"
-                  objectFit="cover"
-                  priority={index === 0} // Ensure the first image loads immediately
-                />
+                {/* First image */}
+                <div className="relative w-full h-[240px] mb-4">
+                  <Image
+                    src={item.image}
+                    alt={`${item.title} 1`}
+                    layout="fill"
+                    objectFit="contain"
+                     className="w-full"
+                    priority={index === 0}
+                  />
+                </div>
+                
+                {/* Second image */}
+                <div className="relative w-full h-[240px]">
+                  <Image
+                    src={item.image}
+                    alt={`${item.title} 2`}
+                    layout="fill"
+                    objectFit="contain"
+                    className="w-full"
+                  />
+                </div>
               </motion.div>
-            ))}
-          </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </div>
-  );
+  </div>
+);
 
   /**
    * Desktop version of the hero banner
@@ -172,7 +201,7 @@ const HeroBanner = () => {
           borderRadius: "32px",
         }}
       >
-        <div className="absolute inset-0 z-10 bg-gradient-to-r from-[#6e6a61e6] via-[#323029e6] to-[#2e2c27e6]" />
+        <div className="absolute inset-0 z-10 bg-gradient-to-b from-[#070501] to-[#1a1812] opacity-95" />
 
         <div className="relative z-20 max-w-6xl mx-auto h-full flex items-center pb-12">
           {/* Text Content */}
