@@ -68,7 +68,7 @@ const TestimonialSection = (props: Props) => {
             <div className='flex flex-col md:flex-row gap-10'>
                 <div className="flex-1">
                     <h3 className='font-semibold text-2xl lg:text-3xl mb-5 text-black'>Testimonials</h3>
-                    <p className='text-sm text-[#666666] leading-6 mb-5'>At Ohwambe, we’re passionate about helping you create unforgettable celebrations with ease. These testimonials showcase how we have transformed event planning into a seamless and enjoyable experience for everyone involved. From weddings to birthdays and beyond, see how Ohwambe is making every celebration extraordinary.</p>
+                    <p className='text-base text-[#666666] leading-6 mb-5'>At Ohwambe, we’re passionate about helping you create unforgettable celebrations with ease. These testimonials showcase how we have transformed event planning into a seamless and enjoyable experience for everyone involved. From weddings to birthdays and beyond, see how Ohwambe is making every celebration extraordinary.</p>
 
                     <div className="flex items-center gap-6">
                         <span className={testimonyIconButtonStyle} onClick={() => scrollTestimonialContainer('left')}><Icons.LeftArrowIcon /></span>

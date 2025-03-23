@@ -1,5 +1,5 @@
 import logo from '@/public/images/logo.png';
-import hero_image1 from '@/public/images/hero_img.png';
+import hero_image1 from '@/public/images/hero_img001.png';
 import hero_image01 from '@/public/images/hero_group.jpg';
 import hero_image02 from '@/public/images/hero_image02.jpg';
 import hero_image03 from '@/public/images/hero_image03.jpg';
@@ -27,6 +27,9 @@ import blog1 from '@/public/images/blog1.png';
 import blog2 from '@/public/images/blog2.png';
 import blog3 from '@/public/images/blog3.png';
 import testimonial3 from '@/public/images/container2.png';
+
+// contact page images
+import contact_image from '@/public/images/contact_hero.png';
 
 
 export default {
@@ -58,5 +61,6 @@ export default {
   blog1,
   blog2,
   blog3,
-  group_img
+  group_img,
+  contact_image
 };

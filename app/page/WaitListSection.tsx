@@ -3,6 +3,8 @@ import { sectionPadding } from '../styles/styles';
 import Image from 'next/image';
 import images from '@/public/images';
 import { motion } from 'framer-motion';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const textVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -22,22 +24,51 @@ const buttonVariants = {
 const WaitListSection = () => {
   const [email, setEmail] = useState('');
   const [error, setError] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setError('');
+  
     if (!email) {
       setError('Email is required');
+      return;
     } else if (!/\S+@\S+\.\S+/.test(email)) {
       setError('Please enter a valid email address');
-    } else {
-      setError('');
-      // Handle form submission
-      console.log('Email submitted:', email);
+      return;
     }
+  
+    setIsLoading(true);
+  
+    fetch('/api/waitlist', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email }),
+    })
+      .then(async response => {
+        const result = await response.json();
+        if (result.success) {
+          toast.success('Successfully added to the waitlist!');
+          setEmail('');
+        } else {
+          setError('Failed to join waitlist. Try again later.');
+          toast.error('Failed to join waitlist. Try again later.');
+        }
+      })
+      .catch(() => {
+        setError('Error submitting form. Please try again.');
+        toast.error('Error submitting form. Please try again.');
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
   };
-
+  
   return (
     <section className={`${sectionPadding} mb-20`}>
+      <ToastContainer />
       <div className="flex items-center justify-center p-4">
         <div className="relative w-full rounded-3xl overflow-hidden">
           {/* Background Image with Overlay */}
@@ -65,9 +96,9 @@ const WaitListSection = () => {
               variants={buttonVariants}
               className="flex justify-center items-center mb-8"
             >
-              <button className="py-2 px-4 rounded-full text-sm font-semibold shadow-lg text-black bg-white hover:bg-white/90">
+              <div className="py-2 px-4 rounded-full text-sm font-semibold shadow-lg text-black bg-white hover:bg-white/90">
                 Join Our Waitlist
-              </button>
+              </div>
             </motion.div>
 
             {/* Main Content */}
@@ -111,8 +142,12 @@ const WaitListSection = () => {
                   onChange={(e) => setEmail(e.target.value)}
                   className="w-full bg-transparent text-white border border-[#BABABA] outline-none px-4 py-2.5 rounded-full focus:outline-none"
                 />
-                <button type="submit" className="w-full sm:w-auto text-nowrap px-6 py-2.5 rounded-full bg-secondary text-black font-medium hover:bg-[#F6B84B]/90 transition-colors duration-200">
-                  Join Waitlist
+                <button
+                  type="submit"
+                  className="w-full sm:w-auto text-nowrap px-6 py-2.5 rounded-full bg-secondary text-black font-medium hover:bg-[#F6B84B]/90 transition-colors duration-200"
+                  disabled={isLoading}
+                >
+                  {isLoading ? 'Submitting...' : 'Join Waitlist'}
                 </button>
               </motion.form>
               {error && <p className="text-red-500">{error}</p>}

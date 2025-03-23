@@ -4,6 +4,7 @@ import { ButtonLoader } from "../Loader/ComponentLoader";
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     btnIcon?: React.ReactElement;
     hideLoader?: boolean
+    variant?: 'outline' | 'default';
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
